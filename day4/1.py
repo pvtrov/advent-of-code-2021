@@ -97,12 +97,12 @@ def bingo(boards, numbers_array):
                     for y in range(5):
                         if boards[i][x][y] == number:
                             boards[i][x][y] = -1
-                            if check_bingo(boards[i]) == True:
+                            if check_bingo(boards[i]):
                                 board_check[i] = True
                                 counter -= 1
                                 if counter == 0:
                                     sum_of_marked = suming(boards[i])
-                                    return (sum_of_marked) * number
+                                    return sum_of_marked * number
 
 
 print(bingo(making_boards(boards, file), numbers_array))
